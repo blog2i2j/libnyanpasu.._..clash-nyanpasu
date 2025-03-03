@@ -175,6 +175,9 @@ jobs:
       - name: Prepare sidecar and resources
         run: pnpm check
 
+      - name: Prepare frontend
+        run: pnpm -r build
+
       - name: Build Backend
         run: cargo build --release --manifest-path backend/Cargo.toml
         env:
@@ -256,6 +259,9 @@ jobs:
 
       - name: Prepare sidecar and resources
         run: pnpm check
+
+      - name: Prepare frontend
+        run: pnpm -r build
 
       - name: Test
         run: pnpm test
